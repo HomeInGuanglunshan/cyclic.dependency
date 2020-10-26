@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="d" class="cyclic.dependency.def.StudentD">
+		<constructor-arg index="0" ref="e"></constructor-arg>
+	</bean>
+	<bean id="e" class="cyclic.dependency.def.StudentE">
+		<constructor-arg index="0" ref="f"></constructor-arg>
+	</bean>
+	<bean id="f" class="cyclic.dependency.def.StudentF">
+		<constructor-arg index="0" ref="d"></constructor-arg>
+	</bean>
+
+</beans>
